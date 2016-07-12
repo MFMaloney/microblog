@@ -1,0 +1,9 @@
+<h1>List of all users</h1>
+
+<p>There are <%= @users.count %> users.</p>
+
+<% @users.each do |user| %>
+	<p>
+		<%= link_to(user.email, user) %>
+	</p>
+<% end %>

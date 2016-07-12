@@ -1,0 +1,11 @@
+<h1>All Blogs</h1>
+
+<p>There are <%= @blogs.count %> blogs.</p>
+
+<% @blogs.each do |blog| %>
+	<p>
+		<%= link_to(blog.text_and_author, blog) %>
+		<%= edit_blog_link(blog) %>
+		<%= link_to('Delete', blog, method: :delete) %>
+	</p>
+<% end %>
