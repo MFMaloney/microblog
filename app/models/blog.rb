@@ -8,7 +8,7 @@ class Blog < ActiveRecord::Base
  has_attached_file :avatar, styles:
    {medium: "300x300>", thumb: "100x100>"},
    default_url: ':style/missing.png',
-   storage: s3,
+   storage: :s3,
    s3_credentials: Proc.new{|a| a.instance.s3_credentials }
    		def s3_credentials
    			{bucket: "enzisbucket",
