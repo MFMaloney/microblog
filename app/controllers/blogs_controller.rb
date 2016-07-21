@@ -15,6 +15,9 @@ class BlogsController < ApplicationController
 
 	def create
 		@blog = Blog.create(blog_params.merge(user: current_user))
+		if @blog.valid?
+			redirect_to(@blog)
+		end
 	end
 
 	def edit
@@ -39,7 +42,9 @@ private
 	end
 
 	def blog_params
-		params[:blog].permit(:text)
+		params.require(:blog).permit(:text, :avatar)
+		# .require isn't needed, but it is used to spit out an error
+		#if no params are present.
 	end
 
 end

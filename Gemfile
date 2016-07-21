@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk'
+
+gem 'paperclip', '~> 4.2'
+
 gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

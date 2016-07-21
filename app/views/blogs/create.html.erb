@@ -1,4 +1,16 @@
-<h1>You created a blog!</h1>
+<h1>There was an error!</h1>
 
-<p>You just blogged:</p>
-<p><%= @blog.text %></p>
+<% @blog.errors.full_messages.each do |message| %>
+	<p><%= message %></p>
+<% end %>
+
+<%= form_for(@blog) do |f| %>
+	<p>
+		<%= f.label(:text) %>
+		<%= f.text_field(:text) %>
+	</p>
+	<%= image_tag @blog.avatar.url(:medium) %>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
