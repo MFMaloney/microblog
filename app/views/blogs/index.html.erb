@@ -6,7 +6,7 @@
 	<p>
 		<%= link_to(blog.text_and_author, blog) %>
 	</p>
-		<%= image_tag @blog.avatar.url(:thumb) %>
+		
 	<p>
 		<%= edit_blog_link(blog) %>
 		<%= link_to('Delete', blog, method: :delete) %>
